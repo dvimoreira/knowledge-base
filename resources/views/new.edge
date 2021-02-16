@@ -1,0 +1,198 @@
+@layout('layout/layout')
+
+@section('content')
+  <div class="container-fluid">
+    <div class="top-navigation">
+        <div class="row align-middle">
+            <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcrumb-custom">
+                    <p><i class="fas fa-code" style="color: #2866CF;"></i> Novo documento</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="row">
+            <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <form action="" method="POST">
+                    <div class="row">
+                        <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label for="title">Título</label>
+                                <input type="text" name="title" placeholder="Informe o título" class="form-control" id="title">
+                            </div>
+                        </div>
+
+                        <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label for="title">Categoria <small><a href="#" data-bs-toggle="modal" data-bs-target="#addCategory">Adicionar categoria</a></small></label>
+                                <select class="form-select" name="category" aria-label="Default select example">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <textarea id="summernote" name="summernote"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top: 30px;">
+                        <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="text-end">
+                                <button type="button" class="btn btn-success btn-lg"><i class="far fa-save"></i> Salvar documento</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+  </div>
+
+    <!-- Modal ADD -->
+    <div class="modal fade" id="addCategory" tabindex="-1" aria-labelledby="addCategoryLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addCategoryLabel">Adicionar Categoria</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <form action="" method="post">
+                        <div class="row">
+                            <div class="col col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                <input type="text" class="form-control" placeholder="Categoria" name="category">
+                            </div>
+                            <div class="col col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <button type="button" class="btn btn-success">Adicionar</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <br>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Título</th>
+                                <th scope="col" class="text-end">Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Documentos</td>
+                                <td class="text-end">
+                                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic mixed styles example">
+                                        <button type="button" class="btn btn-primary" title="Editar" data-bs-toggle="modal" data-bs-target="#editCategory"><i class="fas fa-pen"></i></button>
+                                        <button type="button" class="btn btn-danger" title="Deletar"><i class="fas fa-trash"></i></button>                                        
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal EDIT -->
+    <div class="modal fade" id="editCategory" tabindex="-1" aria-labelledby="editCategoryLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editCategoryLabel">Editar Categoria</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <form action="" method="post">
+                        <div class="row">
+                            <div class="col col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                <input type="text" class="form-control" placeholder="Categoria" name="category">
+                            </div>
+                            <div class="col col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <button type="button" class="btn btn-success">Salvar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .top-navigation {
+            margin-bottom: 30px;
+        }
+
+        .breadcrumb-custom {
+            font-size: 18px;
+        }
+
+        .breadcrumb-custom span {
+            opacity: 0.4;
+        }
+
+        .note-editor {
+            margin-top: 30px;
+        }
+    </style>
+@endsection
+
+@section('script')
+<script>   
+    $(document).ready(function() {
+        var HelloButton = function (context) {
+            var ui = $.summernote.ui;
+
+            var button = ui.button({
+                contents: 'Bloco de código',
+                click: function () {
+                    $('#summernote').summernote('editor.restoreRange');
+                    $('#summernote').summernote('editor.focus');
+                    $('#summernote').summernote('insertText', '<pre><code class="html">Place code here</code></pre>');  
+                }
+            });
+
+            return button.render();
+        }
+
+        $('#summernote').summernote({
+            height: 400,
+            minHeight: 400,  
+            maxHeight: 400,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link']],
+                ['view', ['codeview']],
+                ['mybutton', ['hello']],
+            ],
+            buttons: {
+                hello: HelloButton
+            }
+        });
+    });
+</script>
+@endsection

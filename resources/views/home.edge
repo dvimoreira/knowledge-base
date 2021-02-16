@@ -1,0 +1,168 @@
+@layout('layout/layout')
+
+@section('content')
+  <div class="container-fluid">
+    <div class="top-navigation">
+        <div class="row align-middle">
+            <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="breadcrumb-custom">
+                    <p><i class="fas fa-code" style="color: #2866CF;"></i> <b>Engineering</b> <span>/</span> Documentation</p>
+                </div>
+            </div>
+    
+            <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="buttons-nav">
+                    <div class="text-end">
+                        <ul>
+                            <li>
+                                <a href="#" role="button" class="btn btn-outline-primary"><i class="fas fa-pen"></i> Editar</a>
+                            </li>
+        
+                            <li>
+                                <a href="/add-new" role="button" class="btn btn-outline-success"><i class="fas fa-plus"></i> Novo</a>
+                            </li>
+        
+                            <li>
+                                <div class="dropdown">
+                                    <button type="button" class="btn btn-link" id="menu-drop" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                
+                                    <ul class="dropdown-menu" aria-labelledby="menu-drop">
+                                        <li><a class="dropdown-item" href="#">Desconectar</a></li>
+                                      </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-post">
+        <div class="row">
+            <div class="col col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <div class="navigation-content">
+                    <h2>CONTEUDOS</h2>
+
+                    <ul>
+                        <li><a href="#">What is Lorem Ipsum?</a></li>
+                        <li><a href="#">Why do we use it?</a></li>
+                        <li><a href="#">Where does it come from?</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                <div class="text-content">
+                    <h1>What is Lorem Ipsum? <a href="#" title="Adicionar aos favoritos"><i class="far fa-star"></i></a></h1>
+                    <span class="clock"><i class="far fa-clock"></i> Criado por você, 12 minutos atrás.</span>
+
+                    <div class="editor">
+                        <h1>What is Lorem Ipsum?</h1>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        <h2>Why do we use it?</h2>
+                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+                        <h3>Where does it come from?</h3>
+                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+    <style>
+        .top-navigation {
+            margin-bottom: 30px;
+        }
+
+        .breadcrumb-custom {
+            font-size: 18px;
+        }
+
+        .breadcrumb-custom span {
+            opacity: 0.4;
+        }
+
+        .buttons-nav ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .buttons-nav ul li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .buttons-nav ul li:last-child { margin: 0; }
+
+        .buttons-nav ul li ul li {
+            margin: 0;
+            width: 100%;
+        }
+
+        .navigation-content {
+            border-right: 1px solid #b1bacc;
+        }
+
+        .navigation-content h2 {
+            text-transform: uppercase;
+            color: #afb1b3;
+            font-size: 15px;
+            font-weight: 500;
+            margin: 0 0 25px 0;
+        }
+
+        .navigation-content ul {
+            padding: 10px 0;
+            margin: 0;
+        }
+
+        .navigation-content ul li {
+            display: block;
+            list-style: none;
+            margin-bottom: 10px;
+        }
+
+        .navigation-content ul li:last-child { margin: 0; }
+
+        .navigation-content ul li a {
+            display: block;
+            color: #000000;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            border-right: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .navigation-content ul li a:hover {
+            text-decoration: underline;
+            border-color: #b1bacc;
+        }
+
+        .text-content h1 {
+            font-size: 30px;
+            font-weight: 600;
+            margin: 0 0 15px 0;
+        }
+
+        .text-content .clock {
+            color: #afb1b3;
+            margin-bottom: 30px;
+            display: block;
+        }
+
+        .editor h1, .editor h2, .editor h3, .editor h4, .editor h5, .editor h6 {
+            font-size: 26px;
+            font-weight: 600;
+        }
+
+        .editor p {
+            font-size: 18px;
+            line-height: 30px;
+        }
+    </style>
+@endsection
